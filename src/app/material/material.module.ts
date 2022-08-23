@@ -12,6 +12,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatListModule } from '@angular/material/list';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   exports: [
@@ -25,7 +26,8 @@ import { MatListModule } from '@angular/material/list';
     MatTooltipModule,
     MatMenuModule,
     MatBadgeModule,
-    MatListModule
+    MatListModule,
+    MatProgressBarModule
   ],
 })
 export class MaterialModule {}
