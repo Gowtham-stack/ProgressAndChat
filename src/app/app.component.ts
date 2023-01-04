@@ -1,25 +1,64 @@
-import { Component } from '@angular/core';
+import {
+  AfterContentChecked,
+  AfterContentInit,
+  AfterViewChecked,
+  AfterViewInit,
+  Component,
+  DoCheck,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  title = 'ProgressAndChat';
-  // chartLabels: string[] = ['Real time data for the chart'];
-  // chartType: ChartType = 'bar';
-  // chartLegend: boolean = true;
-  // constructor(public signalRService: SignalrService, private http: HttpClient) { }
-  // ngOnInit() {
-  //   this.signalRService.startConnection();
-  //   this.signalRService.addTransferChartDataListener();
-  //   this.startHttpRequest();
-  // }
-  // private startHttpRequest = () => {
-  //   this.http.get('https://localhost:5001/api/chart')
-  //     .subscribe(res => {
-  //       console.log(res);
-  //     })
-  // }
+export class AppComponent
+  implements
+    OnInit,
+    OnChanges,
+    DoCheck,
+    AfterContentInit,
+    AfterContentChecked,
+    AfterViewInit,
+    AfterViewChecked,
+    OnDestroy
+{
+  title = 'App Component';
+  color = '';
+  condition = true;
+
+  constructor() {
+    console.log(this.title + ' constructor triggered');
+
+  }
+
+  ngAfterViewChecked(): void {
+    console.log(this.title + ' ngAfterViewChecked triggered');
+  }
+  ngDoCheck(): void {
+    console.log(this.title + ' ngDoCheck triggered');
+  }
+  ngAfterContentInit(): void {
+    console.log(this.title + ' ngAfterContentInit triggered');
+  }
+  ngAfterContentChecked(): void {
+    console.log(this.title + ' ngAfterContentChecked triggered');
+  }
+  ngAfterViewInit(): void {
+    console.log(this.title + ' ngAfterViewInit triggered');
+  }
+  ngOnDestroy(): void {
+    console.log(this.title + ' ngOnDestory triggered');
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(this.title + ' ngOnChanges triggered');
+  }
+
+  ngOnInit(): void {
+    console.log(this.title + ' ngOnInit triggered');
+  }
 }
